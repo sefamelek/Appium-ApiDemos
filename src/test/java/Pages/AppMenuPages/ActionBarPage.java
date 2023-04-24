@@ -2,61 +2,42 @@ package Pages.AppMenuPages;
 
 
 
+import conts.ActionBarPageVariables;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 
-public class ActionBarPage extends BasePageClass {
-
-    public static final String APP_MENU = "//android.widget.TextView[@content-desc=\"App\"]";
-    public static final String ACTION_BAR = "//android.widget.TextView[@content-desc=\"Action Bar\"]";
-    public static final String ACTION_BAR_TABS = "//android.widget.TextView[@content-desc=\"Action Bar Tabs\"]";
-    public static final String TOGGLE_CHECK = "android:id/action_bar";
-    public static final String TOGGLE_BUTTON = "io.appium.android.apis:id/btn_toggle_tabs";
-    public static final String ADD_NEW_TAB = "io.appium.android.apis:id/btn_add_tab";
-    public static final String TAB_SIZE = "android.app.ActionBar$Tab";
-    public static final String REMOVE_LAST_TAB = "io.appium.android.apis:id/btn_remove_tab";
-    public static final String REMOVE_ALL_TABS = "io.appium.android.apis:id/btn_remove_all_tabs";
-
+public class ActionBarPage extends BasePageClass implements ActionBarPageVariables{
 
     @AndroidFindBy(xpath = APP_MENU)
-    static
-    MobileElement app_menu_Btn;
+    static MobileElement app_menu_Btn;
 
     @AndroidFindBy(xpath = ACTION_BAR)
-    static
-    MobileElement action_bar_Btn;
+    static MobileElement action_bar_Btn;
 
     @AndroidFindBy(xpath = ACTION_BAR_TABS)
-    static
-    MobileElement action_bar_tabs_Btn;
+    static MobileElement action_bar_tabs_Btn;
 
     @AndroidFindBy(id = TOGGLE_CHECK)
-    static
-    MobileElement toggle_check;
+    static MobileElement toggle_check;
 
     @AndroidFindBy(id = TOGGLE_BUTTON)
-    static
-    MobileElement toggle_button;
+    static MobileElement toggle_button;
 
     @AndroidFindBy(id = ADD_NEW_TAB)
-    static
-    MobileElement add_new_tab;
+    static MobileElement add_new_tab;
 
 
     @AndroidFindBy(className = TAB_SIZE)
-    static
-    MobileElement tab_size;
+    static MobileElement tab_size;
 
     @AndroidFindBy(id = REMOVE_LAST_TAB)
-    static
-    MobileElement remove_last_tab;
+    static MobileElement remove_last_tab;
 
     @AndroidFindBy(id = REMOVE_ALL_TABS)
-    static
-    MobileElement remove_all_tabs;
+    static MobileElement remove_all_tabs;
 
     public ActionBarPage(AndroidDriver driver) {
         super(driver);

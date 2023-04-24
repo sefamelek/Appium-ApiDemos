@@ -1,40 +1,83 @@
 package Pages.AppMenuPages;
 
 
+import conts.ActivityPageVariables;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.testng.Assert;
 
 
-public class ActivityPage extends BasePageClass {
+public class ActivityPage extends BasePageClass implements ActivityPageVariables {
 
-    public static final String CONTINUE_BTN = "com.nobroker.app:id/bottomPermission";
-    public static final String BUY_BTN ="com.nobroker.app:id/buyLayout";
-    public static final String SEARCH_BTN="com.nobroker.app:id/searchEditBar";
+    @AndroidFindBy(xpath = APP_MENU)
+    static MobileElement app_Menu;
 
+    @AndroidFindBy(xpath = ACTIVITY_BAR)
+    static MobileElement activity_Bar;
 
-    @AndroidFindBy(id = CONTINUE_BTN)
-    MobileElement allowContinue_Btn;
+    @AndroidFindBy(xpath = CUSTOM_TITLE)
+    static MobileElement custom_Title;
 
-    @AndroidFindBy(id = BUY_BTN)
-    MobileElement but_Btn;
+    @AndroidFindBy(id = LEFT_NAVIGATION_BAR)
+    static MobileElement left_Navigation_Bar;
 
-    @AndroidFindBy(id = SEARCH_BTN)
-    MobileElement search_Btn;
+    @AndroidFindBy(id = RIGHT_NAVIGATION_BAR)
+    static MobileElement right_Navigation_Bar;
+
+    @AndroidFindBy(id = LEFT_TEXTBOX)
+    static MobileElement left_Textbox;
+
+    @AndroidFindBy(id = RIGHT_TEXTBOX)
+    static MobileElement right_Textbox;
+
+    @AndroidFindBy(id = CHANGE_LEFT_BUTTON)
+    static MobileElement Change_Left_Button;
+    @AndroidFindBy(id = CHANGE_RIGHT_BUTTON)
+    static MobileElement Change_Right_Button;
+
 
     public ActivityPage(AndroidDriver driver) {
         super(driver);
     }
-
-    public void allowContinue_Btn() throws InterruptedException {
-        androidHelperMethods.click(allowContinue_Btn);
+    public static void CacheClear() throws InterruptedException {
+        androidHelperMethods.CasheClear();
     }
 
-    public void buyBtn() throws InterruptedException {
-        androidHelperMethods.click(but_Btn);
+    public static void appMenu() throws InterruptedException {
+        androidHelperMethods.click(app_Menu);
     }
 
-    public void search_Btn() throws InterruptedException {
-        androidHelperMethods.click(search_Btn);
+    public static void activity() throws InterruptedException {
+        androidHelperMethods.click(activity_Bar);
     }
+
+    public static void customTitle_Btn() throws InterruptedException {
+        androidHelperMethods.click(custom_Title);
+    }
+    public static void checkNavigationBarText() throws InterruptedException {
+        String leftBar=androidHelperMethods.GetText(left_Navigation_Bar);
+        String rightBar= androidHelperMethods.GetText(right_Navigation_Bar);
+
+        Assert.assertEquals(leftBar,"Left is best");
+        Assert.assertEquals(rightBar,"Right is always right");
+
+    }
+
+    public static void getNavigationBarText() throws InterruptedException {
+        androidHelperMethods.click(left_Textbox);
+        androidHelperMethods.enter(left_Textbox,"Left New Left");
+        androidHelperMethods.click(Change_Left_Button);
+        androidHelperMethods.click(right_Textbox);
+        androidHelperMethods.enter(right_Textbox,"Right New Right");
+        androidHelperMethods.click(Change_Right_Button);
+
+        String leftBar=androidHelperMethods.GetText(left_Navigation_Bar);
+        String rightBar= androidHelperMethods.GetText(right_Navigation_Bar);
+
+        Assert.assertEquals(leftBar,"Left New Left");
+        Assert.assertEquals(rightBar,"Right New Right");
+
+    }
+
 }

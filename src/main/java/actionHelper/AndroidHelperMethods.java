@@ -29,6 +29,16 @@ public class AndroidHelperMethods {
         logger.info("Element is getting clicked");
     }
 
+    public void sendKeys(MobileElement element, String key) throws InterruptedException {
+        //Thread.sleep(5000);
+        logger= Logger.getLogger("Api Demos Mobil Automation");//added Logger
+        logger.setLevel(Level.DEBUG);
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        element.sendKeys(key);
+        logger.info("Send Key");
+    }
+
     public void checkElementAndClick(MobileElement elementCheck, MobileElement elementClick) throws InterruptedException {
         if (elementCheck.isEnabled() == true) {
             System.out.println("Element is active");
@@ -37,10 +47,17 @@ public class AndroidHelperMethods {
             logger.info("Element is getting passive");
 
         } else {
-           logger.info("Element is passive");
+            logger.info("Element is passive");
         }
+    }
+
+    public void CasheClear() throws InterruptedException {
+        driver.resetApp();
+        driver.launchApp();
 
     }
+
+
 
 
     public void enter(MobileElement element, String input) {
@@ -81,5 +98,10 @@ public class AndroidHelperMethods {
         List<AndroidElement> tabs = driver.findElementsByClassName(element);
         AndroidElement get= tabs.get(ElementIndex);
         return get;
+    }
+
+    public String GetText(MobileElement element) {
+    String text = element.getText();
+        return text;
     }
 }
