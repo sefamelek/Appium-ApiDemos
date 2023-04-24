@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePageClass {
     protected AndroidDriver androidDriver;
-    AndroidHelperMethods androidHelperMethods;
+    static AndroidHelperMethods androidHelperMethods;
 
     public BasePageClass(AndroidDriver driver) {
         this.androidDriver = driver;

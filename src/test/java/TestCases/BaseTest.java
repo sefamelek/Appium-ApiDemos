@@ -3,8 +3,7 @@ package TestCases;
 
 import DriverManager.DriverManager;
 import DriverManager.DriverManagerType;
-import Pages.AppMenuPages.BuyPage;
-import Pages.AppMenuPages.HomePage;
+import Pages.AppMenuPages.ActionBarPage;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
@@ -14,16 +13,14 @@ public class BaseTest {
 
 
     static WebDriver driver;
-    HomePage homePage;
-    BuyPage buyPage;
+    ActionBarPage actionBarPage;
 
     @BeforeSuite
     public void setUp() {
         try {
             driver = DriverManager.getDriver(DriverManagerType.ANDROID);
 
-            homePage = new HomePage((AndroidDriver)driver);
-            buyPage = new BuyPage((AndroidDriver)driver);
+            actionBarPage = new ActionBarPage((AndroidDriver)driver);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -34,7 +31,7 @@ public class BaseTest {
     @AfterSuite
     public void destroyDriver() throws Exception {
         System.out.println("bundan sonra");
-    driver.close();
+    driver.quit();
     System.out.println("son");
     }
 }

@@ -2,11 +2,8 @@ package actionHelper;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class AndroidHelperMethods {
     private AndroidDriver driver;
@@ -20,6 +17,18 @@ public class AndroidHelperMethods {
         element.click();
         System.out.println("Element is getting clicked");
     }
+
+    public void checkElementAndClick(MobileElement elementCheck, MobileElement elementClick) throws InterruptedException {
+        if (elementCheck.isEnabled()==false){
+            System.out.println("Element is getting passive");
+            elementClick.click();
+        }
+        else {
+            System.out.println("Element is getting active");
+        }
+
+    }
+
 
     public void enter(MobileElement element, String input) {
         element.clear();

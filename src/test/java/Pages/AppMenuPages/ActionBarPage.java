@@ -1,6 +1,7 @@
 package Pages.AppMenuPages;
 
 
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -9,43 +10,58 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class ActionBarPage extends BasePageClass {
 
-    public static final String CONTINUE_BTN = "com.nobroker.app:id/bottomPermission";
-    public static final String BUY_BTN ="com.nobroker.app:id/buyLayout";
-    public static final String SEARCH_BTN="com.nobroker.app:id/searchEditBar";
+    public static final String APP_MENU = "//android.widget.TextView[@content-desc=\"App\"]";
+    public static final String ACTION_BAR ="//android.widget.TextView[@content-desc=\"Action Bar\"]";
+    public static final String ACTION_BAR_TABS="//android.widget.TextView[@content-desc=\"Action Bar Tabs\"]";
+    public static final String TOGGLE_CHECK="android:id/action_bar";
+    public static final String TOGGLE_BUTTON="android:id/btn_toggle_tabs";
 
 
-    @AndroidFindBy(id = CONTINUE_BTN)
-    MobileElement allowContinue_Btn;
 
-    @AndroidFindBy(id = BUY_BTN)
-    MobileElement but_Btn;
+    @AndroidFindBy(xpath = APP_MENU)
+    static
+    MobileElement app_menu_Btn;
 
-    @AndroidFindBy(id = SEARCH_BTN)
-    MobileElement search_Btn;
+    @AndroidFindBy(xpath = ACTION_BAR)
+    static
+    MobileElement action_bar_Btn;
+
+    @AndroidFindBy(xpath = ACTION_BAR_TABS)
+    static
+    MobileElement action_bar_tabs_Btn;
+
+    @AndroidFindBy(id = TOGGLE_CHECK)
+    static
+    MobileElement toggle_check;
+
+    @AndroidFindBy(id = TOGGLE_BUTTON)
+    static
+    MobileElement toggle_button;
 
     public ActionBarPage(AndroidDriver driver) {
         super(driver);
     }
 
-    public void allowContinue_Btn() throws InterruptedException {
-        androidHelperMethods.click(allowContinue_Btn);
+    public static void appMenu_Btn() throws InterruptedException {
+        androidHelperMethods.click(app_menu_Btn);
     }
 
-    public void buyBtn() throws InterruptedException {
-        androidHelperMethods.click(but_Btn);
+    public static void actionBarBtn() throws InterruptedException {
+        androidHelperMethods.click(action_bar_Btn);
     }
 
-    public void search_Btn() throws InterruptedException {
-        androidHelperMethods.click(search_Btn);
+    public static void actionBarTabs_Btn() throws InterruptedException {
+        androidHelperMethods.click(action_bar_tabs_Btn);
     }
 
-
-    // Navigate to the 'App' menu
-
-    public void ClickAppMenu() throws InterruptedException {
-        androidHelperMethods.click(search_Btn);
+    public static void checkToggleTabMode() throws InterruptedException {
+        androidHelperMethods.checkElementAndClick(toggle_check,toggle_button);
     }
 
+//        AndroidElement toggleTabMode = driver.findElementById("com.example.android.apis:id/toggle_tabs");
+  //      if (!toggleTabMode.getAttribute("checked").equals("false")) {
+    //        toggleTabMode.click();
+/*
 
     // Navigate to the 'Action Bar' menu
         driver.findElementByAccessibilityId("Action Bar").click();
@@ -86,5 +102,7 @@ public class ActionBarPage extends BasePageClass {
     tabs = driver.findElementsByClassName("android.app.ActionBar$Tab");
         if (tabs.size() != 0) {
         throw new AssertionError("Expected no tabs, but found " + tabs.size());
+
     }
+ */
 }
