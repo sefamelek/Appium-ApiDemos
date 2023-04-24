@@ -2,11 +2,16 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
+AutomationReports/AutomationReport.html
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/workspace.xml
+.idea/jpa-buddy.xml
+.idea/uiDesigner.xml
 .idea/libraries/
 *.iws
 *.iml
