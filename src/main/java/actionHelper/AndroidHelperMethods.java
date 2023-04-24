@@ -2,8 +2,11 @@ package actionHelper;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class AndroidHelperMethods {
     private AndroidDriver driver;
@@ -19,12 +22,13 @@ public class AndroidHelperMethods {
     }
 
     public void checkElementAndClick(MobileElement elementCheck, MobileElement elementClick) throws InterruptedException {
-        if (elementCheck.isEnabled()==false){
-            System.out.println("Element is getting passive");
+        if (elementCheck.isEnabled() == true) {
+            System.out.println("Element is active");
             elementClick.click();
-        }
-        else {
-            System.out.println("Element is getting active");
+            System.out.println("Element is getting passive");
+
+        } else {
+            System.out.println("Element is passive");
         }
 
     }
@@ -36,6 +40,7 @@ public class AndroidHelperMethods {
 
         System.out.println("Element is getting entered" + input);
     }
+
     public void inputValuesSlowly(MobileElement element, String value) {
         try {
             String val = value;
@@ -51,9 +56,21 @@ public class AndroidHelperMethods {
         }
     }
 
-    public void WaitTillVisible(MobileElement element){
+    public void WaitTillVisible(MobileElement element) {
 
         new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(element));
 
+    }
+
+    public int CheckListSize(String element) {
+        List<AndroidElement> tabs = driver.findElementsByClassName(element);
+        int size= tabs.size();
+        return size;
+    }
+
+    public AndroidElement CheckListIndex(String element, int ElementIndex) {
+        List<AndroidElement> tabs = driver.findElementsByClassName(element);
+        AndroidElement get= tabs.get(ElementIndex);
+        return get;
     }
 }
