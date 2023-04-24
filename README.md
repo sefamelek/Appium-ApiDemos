@@ -59,7 +59,7 @@ ExtentManager :In this class we are using Extent api and  initialization of Exte
 BasePageClass :In this class we have initialize all the page classes using PagePafctory conecepts(PageFactory.initElements)
 ```
 ```bash
-HomePage,Login Page :In this class we have all the locators and associated methods.
+Pages/AppMenuPages Page :In this class we have all the locators and associated methods.
 ```
 ##### TestCases : In this package all the TestCases is present.
 
