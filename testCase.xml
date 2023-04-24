@@ -6,7 +6,7 @@
     </listeners>
     <test name="SearchProperty" thread-count="1">
         <classes>
-            <class name="TestCases.LoginTestCases">
+            <class name="TestCases.AllTestCases">
             </class>
         </classes>
     </test>

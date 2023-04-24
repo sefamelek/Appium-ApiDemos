@@ -3,6 +3,8 @@ package actionHelper;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,25 +12,32 @@ import java.util.List;
 
 public class AndroidHelperMethods {
     private AndroidDriver driver;
+    private WebDriverWait wait;
+    public static Logger logger;
 
     public AndroidHelperMethods(AndroidDriver driver) {
         this.driver = driver;
     }
 
     public void click(MobileElement element) throws InterruptedException {
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
+        logger= Logger.getLogger("Api Demos Mobil Automation");//added Logger
+        logger.setLevel(Level.DEBUG);
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
-        System.out.println("Element is getting clicked");
+        logger.info("Element is getting clicked");
     }
 
     public void checkElementAndClick(MobileElement elementCheck, MobileElement elementClick) throws InterruptedException {
         if (elementCheck.isEnabled() == true) {
             System.out.println("Element is active");
+            logger.info("Element is active");
             elementClick.click();
-            System.out.println("Element is getting passive");
+            logger.info("Element is getting passive");
 
         } else {
-            System.out.println("Element is passive");
+           logger.info("Element is passive");
         }
 
     }
@@ -38,7 +47,7 @@ public class AndroidHelperMethods {
         element.clear();
         element.sendKeys(input);
 
-        System.out.println("Element is getting entered" + input);
+        logger.info("Element is getting entered" + input);
     }
 
     public void inputValuesSlowly(MobileElement element, String value) {
@@ -52,7 +61,7 @@ public class AndroidHelperMethods {
                 Thread.sleep(100);
             }
         } catch (Exception e) {
-            System.out.println("Not able to enter" + e.getMessage());
+            logger.info("Not able to enter" + e.getMessage());
         }
     }
 
