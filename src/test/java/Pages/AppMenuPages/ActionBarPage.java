@@ -69,9 +69,9 @@ public class ActionBarPage extends BasePageClass implements ActionBarPageVariabl
 
     // Verify that 3 tabs have been added
     public static void CheckTabSize() throws InterruptedException {
-        int tabSize = androidHelperMethods.CheckListSize(TAB_SIZE);
+        int tabSize = androidHelperMethods.CheckListSizeforClassName(TAB_SIZE);
 
-        if (androidHelperMethods.CheckListSize(TAB_SIZE) != 3) {
+        if (androidHelperMethods.CheckListSizeforClassName(TAB_SIZE) != 3) {
             throw new AssertionError("Expected 3 tabs, but found " + tabSize);
         }
     }
@@ -86,9 +86,9 @@ public class ActionBarPage extends BasePageClass implements ActionBarPageVariabl
     public static void CheckDeletedTab() throws InterruptedException {
         // Verify that the correct tab has been deleted
 
-        int tabSize = androidHelperMethods.CheckListSize(TAB_SIZE);
+        int tabSize = androidHelperMethods.CheckListSizeforClassName(TAB_SIZE);
         AndroidElement getIndex = androidHelperMethods.CheckListIndex(TAB_SIZE, 1);
-        if (androidHelperMethods.CheckListSize(TAB_SIZE) != 2) {
+        if (androidHelperMethods.CheckListSizeforClassName(TAB_SIZE) != 2) {
             throw new AssertionError("Expected the last tab to be 'Tab 2', but found " + getIndex.getText());
         }
     }
@@ -102,9 +102,9 @@ public class ActionBarPage extends BasePageClass implements ActionBarPageVariabl
 
     // Verify that there are no active tabs in the activity
     public static void CheckTabSizeZero() throws InterruptedException {
-        int tabSize = androidHelperMethods.CheckListSize(TAB_SIZE);
+        int tabSize = androidHelperMethods.CheckListSizeforClassName(TAB_SIZE);
 
-        if (androidHelperMethods.CheckListSize(TAB_SIZE) != 0) {
+        if (androidHelperMethods.CheckListSizeforClassName(TAB_SIZE) != 0) {
 
             throw new AssertionError("Expected no tabs, but found " + tabSize);
         }

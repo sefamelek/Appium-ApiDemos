@@ -9,7 +9,7 @@ import java.util.Properties;
 public class DriverManager {
     static Properties properties;
     public static AndroidDriver driver;
-    static DesiredCapabilities capabilities;
+    public static DesiredCapabilities capabilities;
 
     public static WebDriver getDriver(DriverManagerType browserName) throws Exception {
 
@@ -20,7 +20,7 @@ public class DriverManager {
 
     }
     public static WebDriver quitDriver(DriverManagerType browserName) throws Exception {
-        //driver.quit();
+        driver.quit();
         return null;
     }
 }

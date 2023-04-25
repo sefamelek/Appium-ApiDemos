@@ -22,23 +22,19 @@ public class AndroidDriverManager {
             File classpathRoot = new File(System.getProperty("user.dir"));
             File appDir = new File(classpathRoot, "src/main/resources/apk");
             File app = new File (appDir, "API Demos.apk");
-
             properties = utility.loadProperties(propertyPath);
             String deviceName = properties.getProperty("deviceName");
             String nodeURL = properties.getProperty("nodeURL");
             String appPackage = properties.getProperty("appPackage");
             String appActivity = properties.getProperty("appActivity");
             String platformName = properties.getProperty("platformName");
-
-            String apps = properties.getProperty("apkPath");
             capabilities = new DesiredCapabilities();
             capabilities.setCapability("app", app.getAbsolutePath());
-           // capabilities.setCapability("app", "/Users/scorp/Downloads/Appium-ApiDemos/src/main/resources/apk/API Demos.apk");
-
             capabilities.setCapability("appPackage", appPackage);
             capabilities.setCapability("appActivity", appActivity);
             capabilities.setCapability("platformName", platformName);
             capabilities.setCapability("deviceName", deviceName);
+            capabilities.setCapability("noReset", true);
 
             URL url = new URL(nodeURL);
 

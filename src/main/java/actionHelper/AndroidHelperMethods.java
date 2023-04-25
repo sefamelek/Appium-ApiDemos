@@ -5,10 +5,15 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.URL;
 import java.util.List;
+
+import static DriverManager.DriverManager.capabilities;
 
 public class AndroidHelperMethods {
     private AndroidDriver driver;
@@ -88,12 +93,26 @@ public class AndroidHelperMethods {
 
     }
 
-    public int CheckListSize(String element) {
+    public int CheckListSizeforClassName(String element) {
         List<AndroidElement> tabs = driver.findElementsByClassName(element);
         int size= tabs.size();
         return size;
     }
+    public int CheckListSizeforXpath(String element , MobileElement element1) throws InterruptedException {
 
+        wait.until(ExpectedConditions.visibilityOfAllElements(element1));
+
+        List<AndroidElement> tabs = driver.findElementsByXPath(element);
+        int size= tabs.size();
+        return size;
+    }
+    public void clickbyXpath(String element) throws InterruptedException {
+        //Thread.sleep(5000);
+        logger.setLevel(Level.DEBUG);
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(element))).click();
+        logger.info("Element is getting clicked");
+    }
     public AndroidElement CheckListIndex(String element, int ElementIndex) {
         List<AndroidElement> tabs = driver.findElementsByClassName(element);
         AndroidElement get= tabs.get(ElementIndex);
@@ -101,7 +120,10 @@ public class AndroidHelperMethods {
     }
 
     public String GetText(MobileElement element) {
-    String text = element.getText();
+        wait.until(ExpectedConditions.visibilityOfAllElements(element));
+        String text = element.getText();
         return text;
     }
+
+
 }
