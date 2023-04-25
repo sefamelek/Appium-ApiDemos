@@ -3,10 +3,7 @@ package TestCases;
 
 import DriverManager.DriverManager;
 import DriverManager.DriverManagerType;
-import Pages.AppMenuPages.ActionBarPage;
-import Pages.AppMenuPages.ActivityPage;
-import Pages.AppMenuPages.AlertDialogsPage;
-import Pages.AppMenuPages.FragmentContextMenuPage;
+import Pages.AppMenuPages.*;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
@@ -22,6 +19,7 @@ public class BaseTest {
     ActivityPage activityPage;
     AlertDialogsPage alertDialogsPage;
     FragmentContextMenuPage fragmentContextMenuPage;
+    FragmentHideAndShowMenuPage fragmentHideAndShowMenuPage;
 
 
     @BeforeSuite
@@ -33,6 +31,7 @@ public class BaseTest {
             activityPage = new ActivityPage((AndroidDriver) driver);
             alertDialogsPage = new AlertDialogsPage((AndroidDriver) driver);
             fragmentContextMenuPage = new FragmentContextMenuPage((AndroidDriver) driver);
+            fragmentHideAndShowMenuPage = new FragmentHideAndShowMenuPage((AndroidDriver) driver);
 
 
         } catch (Exception e) {

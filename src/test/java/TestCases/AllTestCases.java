@@ -1,10 +1,8 @@
 package TestCases;
 
-import Pages.AppMenuPages.ActionBarPage;
-import Pages.AppMenuPages.ActivityPage;
-import Pages.AppMenuPages.AlertDialogsPage;
-import Pages.AppMenuPages.FragmentContextMenuPage;
+import Pages.AppMenuPages.*;
 import org.springframework.context.annotation.Description;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import org.testng.annotations.Test;
@@ -51,6 +49,14 @@ public class AllTestCases extends BaseTest {
         FragmentContextMenuPage.contextMenu();
         FragmentContextMenuPage.longTouchBtn();
         FragmentContextMenuPage.checkMenuAandMenuB();
+    }
+    @Test
+    public void Scenario_05() throws Exception {
+        FragmentHideAndShowMenuPage.appMenu();
+        FragmentHideAndShowMenuPage.fragmentMenu();
+        FragmentHideAndShowMenuPage.hideAndShowMenu();
+        FragmentHideAndShowMenuPage.checkHideButtons();
+        FragmentHideAndShowMenuPage.clickAndCheckHideButtons() ;
     }
 
 }

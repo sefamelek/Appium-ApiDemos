@@ -9,15 +9,11 @@ import io.appium.java_client.touch.offset.ElementOption;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.net.URL;
 import java.time.Duration;
 import java.util.List;
-
-import static DriverManager.DriverManager.capabilities;
 
 public class AndroidHelperMethods {
     private AndroidDriver driver;
@@ -142,5 +138,28 @@ public class AndroidHelperMethods {
 
     }
 
+    public Boolean checkVisible(MobileElement element) throws InterruptedException {
+        wait = new WebDriverWait(driver, 5);
+        boolean Visibility;
 
+        if (element.isEnabled() == true ) {
+            Visibility = true;
+        }
+        else{
+            Visibility = false;
+        }
+        return Visibility;
+    }
+
+    public Boolean checkNotVisible(MobileElement element) throws InterruptedException {
+        wait = new WebDriverWait(driver, 5);
+        boolean notVisible;
+        try {
+            notVisible = element.isEnabled();
+
+        } catch (Exception e) {
+            notVisible = false;
+        }
+        return notVisible;
+    }
 }
