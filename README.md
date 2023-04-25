@@ -72,11 +72,13 @@ BaseTest :In this class we have initialize drivers and all the pages.
 ```
 #####
 
-##### TestCases
+
+##### TEST CASES ####
 
 Scenario-1:
 ```bash
--- Requirements:
+Requirements:
+
 1- The application is installed,
 2- Permissions are given by default when the app is opened,
 3- It is checked that the opened app is the desired app.
@@ -87,7 +89,8 @@ all tabs are deleted and it is checked that there are no active tabs in the acti
 ```
 Scenario-2:
 ```bash
--- Requirement:
+Requirement:
+
 1- At this stage, it is reached by making clear cash without deleting the application.
 'App > Activity > Custom Title' menu. In the activity that opens, the default textBox
 and navigationBar texts are checked. By changing the left and right textBox fields, it is checked that
@@ -95,7 +98,8 @@ the relevant textBox and navigationBar texts have changed.
 ```
 Scenario-3:
 ```bash
--- Requirement:
+Requirement:
+
 1- At this stage, it is reached without clear cash without deleting the application.
 (noReset=true)
 'Follow the App > Alert Dialogs > List dialog' menu. In the opened activity, any
@@ -105,7 +109,8 @@ element and the name of the element is checked in the alert message.
 
 Scenario-4:
 ```bash
--- Requirement:
+Requirement:
+
 1- At this stage, it is reached without clear cash without deleting the application.
 (noReset=true)
 'App > Fragment > Context Menu' In the activity that opens, it is checked that the
@@ -114,7 +119,8 @@ Menu A and Menu B elements are opened by long pressing the 'long press me' butto
 
 Scenario-5:
 ```bash
--- Requirement:
+Requirement:
+
 1- At this stage, it is reached without clear cash without deleting the application.
 (noReset=true)
 'App > Fragment> Hide and Show' menus. It is checked that there are two Hide
@@ -125,7 +131,8 @@ button, it is checked that the textBox is back and the button text is 'Hide'.
 
 Scenario-6:
 ```bash
--- Requirement:
+Requirement:
+
 1- At this stage, it is reached without clear cash without deleting the application.
 (noReset=true)
 'App > Notification > Incoming Message'. In the activity that opens, the 'Show
@@ -137,7 +144,8 @@ text in the notification bar area contain each other.
 
 Scenario-7:
 ```bash
--- Requirement:
+Requirement:
+
 1- At this stage, the application is deleted and reinstalled and the flow continues.
 'Views > Tabs menu > 5. Scrollable' menu. Switching to Tab, which is in the last place
 in the activity that opens, is checked, after clicking Tab, it is checked that the opened page
