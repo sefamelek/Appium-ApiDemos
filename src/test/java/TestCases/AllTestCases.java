@@ -58,5 +58,15 @@ public class AllTestCases extends BaseTest {
         FragmentHideAndShowMenuPage.checkHideButtons();
         FragmentHideAndShowMenuPage.clickAndCheckHideButtons() ;
     }
+    @Test
+    public void Scenario_06() throws Exception{
+
+        NotificationMenuPage.appMenu();
+        NotificationMenuPage.fragmentMenu();
+        NotificationMenuPage.incomingMessage();
+        NotificationMenuPage.showNotificationBtn();
+        NotificationMenuPage.checkNotifications();
+        NotificationMenuPage.clickNotificationAndCheck();
+    }
 
 }

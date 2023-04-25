@@ -20,7 +20,7 @@ public class BaseTest {
     AlertDialogsPage alertDialogsPage;
     FragmentContextMenuPage fragmentContextMenuPage;
     FragmentHideAndShowMenuPage fragmentHideAndShowMenuPage;
-
+    NotificationMenuPage notificationMenuPage;
 
     @BeforeSuite
     public void setUp() {
@@ -32,7 +32,7 @@ public class BaseTest {
             alertDialogsPage = new AlertDialogsPage((AndroidDriver) driver);
             fragmentContextMenuPage = new FragmentContextMenuPage((AndroidDriver) driver);
             fragmentHideAndShowMenuPage = new FragmentHideAndShowMenuPage((AndroidDriver) driver);
-
+            notificationMenuPage = new NotificationMenuPage((AndroidDriver) driver);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

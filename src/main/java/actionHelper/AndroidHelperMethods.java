@@ -153,6 +153,7 @@ public class AndroidHelperMethods {
 
     public Boolean checkNotVisible(MobileElement element) throws InterruptedException {
         wait = new WebDriverWait(driver, 5);
+
         boolean notVisible;
         try {
             notVisible = element.isEnabled();
@@ -162,4 +163,14 @@ public class AndroidHelperMethods {
         }
         return notVisible;
     }
+
+
+    public void OpenNotifications() throws InterruptedException {
+        driver.openNotifications();
+    }
+    public void CloseNotifications(MobileElement element) throws InterruptedException {
+        element.click();
+    }
+
+
 }
