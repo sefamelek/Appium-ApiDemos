@@ -6,6 +6,7 @@ import DriverManager.DriverManagerType;
 import Pages.AppMenuPages.ActionBarPage;
 import Pages.AppMenuPages.ActivityPage;
 import Pages.AppMenuPages.AlertDialogsPage;
+import Pages.AppMenuPages.FragmentContextMenuPage;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
@@ -20,6 +21,8 @@ public class BaseTest {
     ActionBarPage actionBarPage;
     ActivityPage activityPage;
     AlertDialogsPage alertDialogsPage;
+    FragmentContextMenuPage fragmentContextMenuPage;
+
 
     @BeforeSuite
     public void setUp() {
@@ -29,6 +32,8 @@ public class BaseTest {
             actionBarPage = new ActionBarPage((AndroidDriver)driver);
             activityPage = new ActivityPage((AndroidDriver) driver);
             alertDialogsPage = new AlertDialogsPage((AndroidDriver) driver);
+            fragmentContextMenuPage = new FragmentContextMenuPage((AndroidDriver) driver);
+
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

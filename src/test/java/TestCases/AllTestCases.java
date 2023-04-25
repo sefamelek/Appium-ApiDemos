@@ -3,6 +3,7 @@ package TestCases;
 import Pages.AppMenuPages.ActionBarPage;
 import Pages.AppMenuPages.ActivityPage;
 import Pages.AppMenuPages.AlertDialogsPage;
+import Pages.AppMenuPages.FragmentContextMenuPage;
 import org.springframework.context.annotation.Description;
 import org.testng.annotations.Test;
 
@@ -42,6 +43,14 @@ public class AllTestCases extends BaseTest {
         AlertDialogsPage.alertDialog();
         AlertDialogsPage.listDialog();
         AlertDialogsPage.SelectCommandElementAndCheckAlert();
+    }
+    @Test
+    public void Scenario_04() throws Exception {
+        FragmentContextMenuPage.appMenu();
+        FragmentContextMenuPage.fragmentMenu();
+        FragmentContextMenuPage.contextMenu();
+        FragmentContextMenuPage.longTouchBtn();
+        FragmentContextMenuPage.checkMenuAandMenuB();
     }
 
 }

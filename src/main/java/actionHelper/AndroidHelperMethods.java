@@ -1,8 +1,11 @@
 package actionHelper;
+import io.appium.java_client.TouchAction;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -11,6 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.time.Duration;
 import java.util.List;
 
 import static DriverManager.DriverManager.capabilities;
@@ -19,6 +23,7 @@ public class AndroidHelperMethods {
     private AndroidDriver driver;
     private WebDriverWait wait;
     public static Logger logger;
+    TouchAction touchAction;
 
     public AndroidHelperMethods(AndroidDriver driver) {
         this.driver = driver;
@@ -127,6 +132,14 @@ public class AndroidHelperMethods {
         wait.until(ExpectedConditions.visibilityOfAllElements(element));
         String text = element.getText();
         return text;
+    }
+
+    public void LongTouch(MobileElement element){
+        touchAction = new TouchAction(driver);
+        LongPressOptions longPressOptions = new LongPressOptions();
+        longPressOptions.withElement(ElementOption.element(element)).withDuration(Duration.ofSeconds(3));
+        new TouchAction<>(driver).longPress(longPressOptions).release().perform();
+
     }
 
 
