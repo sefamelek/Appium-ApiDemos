@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite-1" parallel="false">
+<suite name="Api Demos - Sefa Melek" parallel="false">
     <listeners>
         <listener class-name="Listeners.TestListener"/>
     </listeners>
-    <test name="SearchProperty" thread-count="1">
+    <test name="ApiDemos App Test" thread-count="1">
         <classes>
-            <class name="TestCases.AllTestCases">
-            </class>
+            <class name="TestCases.AllTestCases"></class>
         </classes>
     </test>
 </suite>

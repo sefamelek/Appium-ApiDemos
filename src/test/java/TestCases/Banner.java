@@ -40,8 +40,6 @@ public class Banner {
     private static final String FEATURE_DIR     =   "src/test/resources/features/".replace("/", SLASH);
     private static final String RERUN_DIR       =   "build/rerun".replace("/",SLASH);
     private static String tags                  =   System.getProperty( "tag", "~@ignore" );
-    // "@tag1,@tag2" == tag1 || tag2
-    // "@tag1&@tag2" == tag1 && tag2
 
     public Banner() throws IOException {
 

@@ -13,8 +13,6 @@ import java.util.Random;
 
 public class AlertDialogsPage extends BasePageClass implements AlertDialogPageVariables {
 
-
-
     @AndroidFindBy(xpath = APP_MENU)
     static MobileElement app_Menu;
 
@@ -35,9 +33,8 @@ public class AlertDialogsPage extends BasePageClass implements AlertDialogPageVa
     }
 
 
-
-
     public static void appMenu() throws InterruptedException {
+        androidHelperMethods.LaunchApp();
         androidHelperMethods.click(app_Menu);
     }
 

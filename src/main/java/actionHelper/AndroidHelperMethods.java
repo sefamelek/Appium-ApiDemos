@@ -61,6 +61,10 @@ public class AndroidHelperMethods {
         driver.launchApp();
 
     }
+    public void LaunchApp() throws InterruptedException {
+        driver.launchApp();
+
+    }
 
 
 
