@@ -111,10 +111,5 @@ public class ActionBarPage extends BasePageClass implements ActionBarPageVariabl
 
             throw new AssertionError("Expected no tabs, but found " + tabSize);
         }
-
-
-
     }
-
-
     }
