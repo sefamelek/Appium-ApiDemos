@@ -7,7 +7,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentManager {
 
-    private static ExtentReports extentReports = null;
+    public static ExtentReports extentReports = null;
     private static ThreadLocal<ExtentReports> extent = new ThreadLocal();
     private static ThreadLocal<ExtentTest> test = new ThreadLocal();
     private static ThreadLocal<ExtentTest> child = new ThreadLocal();
@@ -50,7 +50,7 @@ public class ExtentManager {
             ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportFolderPath + reportName);
             htmlReporter.config().setDocumentTitle("Automation Report");
             htmlReporter.config().setReportName("Automation Reports ");
-            htmlReporter.config().setTheme(Theme.STANDARD);
+            htmlReporter.config().setTheme(Theme.DARK);
             htmlReporter.config().setEncoding("utf-8");
             extentReports = new ExtentReports();
             extentReports.attachReporter(htmlReporter);
