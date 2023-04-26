@@ -9,17 +9,22 @@ import io.appium.java_client.touch.offset.ElementOption;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.utility;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Properties;
 
 public class AndroidHelperMethods {
     private AndroidDriver driver;
     private WebDriverWait wait;
     public static Logger logger;
     TouchAction touchAction;
+    Properties properties;
+
 
     public AndroidHelperMethods(AndroidDriver driver) {
         this.driver = driver;
@@ -170,6 +175,13 @@ public class AndroidHelperMethods {
     }
     public void CloseNotifications(MobileElement element) throws InterruptedException {
         element.click();
+    }
+
+    public void removeApp(MobileElement element) throws InterruptedException {
+        String propertyPath = System.getProperty("user.dir") + "/src/main/resources/android.properties";
+        properties = utility.loadProperties(propertyPath);
+        String appPackage = properties.getProperty("appPackage");
+        driver.removeApp(appPackage);
     }
 
 

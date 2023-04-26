@@ -1,18 +1,26 @@
 package Listeners;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import reportManager.ExtentManager;
 
+import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Logger;
+
+import static DriverManager.DriverManager.driver;
 
 public class TestListener implements ITestListener {
+
     private ConcurrentHashMap<String, ExtentTest> allTests = new ConcurrentHashMap<>();
     String reportFolderPath = System.getProperty("user.dir") + "/AutomationReports/";
     String reportName = "AutomationReport.html";
@@ -25,9 +33,12 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        ExtentTest extentTest = ExtentManager.createInstance(reportFolderPath, reportName).createTest(iTestResult.getMethod().getRealClass().getSimpleName());
+        ExtentTest extentTest = ExtentManager.createInstance(reportFolderPath, reportName).createTest(iTestResult.getMethod().getMethodName());
         allTests.put(iTestResult.getClass().getSimpleName(), extentTest);
         ExtentManager.setTest(extentTest);
+        TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
+        String base64Screenshot = screenshotDriver.getScreenshotAs(OutputType.BASE64);
+        ExtentManager.getTest().get().addScreenCaptureFromBase64String(base64Screenshot,"Sefa2");
         ExtentManager.getInstance().flush();
     }
 
@@ -35,6 +46,9 @@ public class TestListener implements ITestListener {
     public void onTestSuccess(ITestResult iTestResult) {
         ExtentManager.getTest().get().assignCategory(iTestResult.getClass().getSimpleName());
         ExtentManager.getTest().get().createNode(MarkupHelper.createLabel("Test passed", ExtentColor.GREEN).getMarkup());
+        TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
+        String base64Screenshot = screenshotDriver.getScreenshotAs(OutputType.BASE64);
+        ExtentManager.getTest().get().addScreenCaptureFromBase64String(base64Screenshot,"Sefa1");
         ExtentManager.getInstance().flush();
     }
 
@@ -43,6 +57,9 @@ public class TestListener implements ITestListener {
         try {
             ExtentManager.getTest().get().createNode(MarkupHelper.createLabel("Test Failed", ExtentColor.RED).getMarkup())
                     .fail(iTestResult.getThrowable());
+            TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
+            String base64Screenshot = screenshotDriver.getScreenshotAs(OutputType.BASE64);
+            ExtentManager.getTest().get().addScreenCaptureFromBase64String(base64Screenshot,"Sefa2");
             ExtentManager.getInstance().flush();
         } catch (Exception e) {
             e.printStackTrace();

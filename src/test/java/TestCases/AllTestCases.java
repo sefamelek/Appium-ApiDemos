@@ -1,16 +1,25 @@
 package TestCases;
 
 import Pages.AppMenuPages.*;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.TestListener;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.springframework.context.annotation.Description;
 import org.testng.Assert;
+import org.testng.ITestNGMethod;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import org.testng.annotations.Test;
+import reportManager.ExtentManager;
 
+import static reportManager.ExtentManager.createInstance;
+import static reportManager.ExtentManager.extentReports;
 import static util.BannerUtil.paintBanner;
 
 public class AllTestCases extends BaseTest {
-
 
     @Test
     public void Scenario_01() throws Exception {
@@ -60,7 +69,6 @@ public class AllTestCases extends BaseTest {
     }
     @Test
     public void Scenario_06() throws Exception{
-
         NotificationMenuPage.appMenu();
         NotificationMenuPage.fragmentMenu();
         NotificationMenuPage.incomingMessage();
@@ -68,5 +76,6 @@ public class AllTestCases extends BaseTest {
         NotificationMenuPage.checkNotifications();
         NotificationMenuPage.clickNotificationAndCheck();
     }
+
 
 }

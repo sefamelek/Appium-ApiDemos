@@ -1,6 +1,8 @@
 package Pages.AppMenuPages;
 
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.Status;
 import conts.NotificationPageVariables;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -47,6 +49,13 @@ public class NotificationMenuPage extends BasePageClass implements NotificationP
     }
 
     public static void appMenu() throws InterruptedException {
+
+       // extentTest.log(Status.INFO, "Senaryo adı belirlendi ve senaryo açıklaması eklendi.");
+        // Senaryo adı ve açıklaması burada belirtilir.
+
+        // Senaryo adı için diğer işlemler burada gerçekleştirilir.
+
+        //extentTest.log(Status.PASS, "Senaryo başarıyla tamamlandı.");
         androidHelperMethods.LaunchApp();
         androidHelperMethods.click(app_Menu);
     }
