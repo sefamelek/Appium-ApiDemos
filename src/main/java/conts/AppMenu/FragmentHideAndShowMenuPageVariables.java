@@ -1,4 +1,4 @@
-package conts;
+package conts.AppMenu;
 
 public interface FragmentHideAndShowMenuPageVariables {
     public static final String APP_MENU = "//android.widget.TextView[contains(@text, 'App')]";//xpath

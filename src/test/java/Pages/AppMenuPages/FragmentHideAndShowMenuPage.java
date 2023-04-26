@@ -1,7 +1,7 @@
 package Pages.AppMenuPages;
 
 
-import conts.FragmentHideAndShowMenuPageVariables;
+import conts.AppMenu.FragmentHideAndShowMenuPageVariables;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;

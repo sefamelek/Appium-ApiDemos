@@ -1,14 +1,18 @@
 package actionHelper;
+import DriverManager.DriverManager;
 import io.appium.java_client.TouchAction;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
+import io.appium.java_client.touch.offset.PointOption;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -177,12 +181,64 @@ public class AndroidHelperMethods {
         element.click();
     }
 
-    public void removeApp(MobileElement element) throws InterruptedException {
+    public void removeApp() throws InterruptedException {
         String propertyPath = System.getProperty("user.dir") + "/src/main/resources/android.properties";
         properties = utility.loadProperties(propertyPath);
         String appPackage = properties.getProperty("appPackage");
         driver.removeApp(appPackage);
     }
 
+    public void ScrollDown(MobileElement element) {
+        Dimension dimensions = driver.manage().window().getSize();
+        int scrollStart = (int) (dimensions.getHeight() * 0.8);
+        int scrollEnd = (int) (dimensions.getHeight() * 0.2);
+        boolean elementVisible;
+        try {
+            elementVisible = element.isDisplayed();
 
+        } catch (Exception e) {
+            elementVisible = false;
+        }
+        while (!elementVisible) {
+            new TouchAction(driver).press(PointOption.point(0, scrollStart))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
+                    //.moveTo(ElementOption.element(element))
+                    .moveTo(PointOption.point(0, scrollEnd))
+                    .release()
+                    .perform();
+            try {
+                elementVisible = element.isDisplayed();
+
+            } catch (Exception e) {
+                elementVisible = false;
+            }
+        }
+    }
+    public void swipeBetweenTabs(MobileElement element) {
+
+        Dimension dimensions = driver.manage().window().getSize();
+        int scrollStart = (int) (dimensions.getWidth() * 0.8);
+        int scrollEnd = (int) (dimensions.getWidth() * 0.2);
+        boolean elementVisible;
+        try {
+            elementVisible = element.isDisplayed();
+
+        } catch (Exception e) {
+            elementVisible = false;
+        }
+        while (!elementVisible) {
+            new TouchAction(driver).press(PointOption.point(0, element.getLocation().getX()))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
+                    .moveTo(PointOption.point(0, scrollEnd))
+                    .release()
+                    .perform();
+            try {
+                elementVisible = element.isDisplayed();
+
+            } catch (Exception e) {
+                elementVisible = false;
+            }
+        }
+
+    }
 }

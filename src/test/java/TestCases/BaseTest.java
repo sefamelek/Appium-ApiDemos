@@ -4,6 +4,7 @@ package TestCases;
 import DriverManager.DriverManager;
 import DriverManager.DriverManagerType;
 import Pages.AppMenuPages.*;
+import Pages.ViewsMenuPages.*;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -25,9 +26,7 @@ public class BaseTest {
     FragmentContextMenuPage fragmentContextMenuPage;
     FragmentHideAndShowMenuPage fragmentHideAndShowMenuPage;
     NotificationMenuPage notificationMenuPage;
-    ExtentHtmlReporter htmlReporter;
-    ExtentReports extent;
-    ExtentTest testi;
+    TabsPage tabsPage;
     @BeforeSuite
     public void setUp() {
         try {
@@ -40,7 +39,8 @@ public class BaseTest {
             alertDialogsPage = new AlertDialogsPage((AndroidDriver) driver);
             fragmentContextMenuPage = new FragmentContextMenuPage((AndroidDriver) driver);
             fragmentHideAndShowMenuPage = new FragmentHideAndShowMenuPage((AndroidDriver) driver);
-            notificationMenuPage = new NotificationMenuPage((AndroidDriver) driver);
+            notificationMenuPage = new NotificationMenuPage((AndroidDriver) driver);;
+            tabsPage = new TabsPage((AndroidDriver) driver);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

@@ -13,7 +13,7 @@ public class BasePageClass {
     ExtentHtmlReporter htmlReporter;
     static ExtentReports extent;
     protected AndroidDriver androidDriver;
-    static AndroidHelperMethods androidHelperMethods;
+    protected static AndroidHelperMethods androidHelperMethods;
 
     public BasePageClass(AndroidDriver driver) {
         this.androidDriver = driver;

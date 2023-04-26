@@ -2,13 +2,11 @@ package Pages.AppMenuPages;
 
 
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import conts.ActionBarPageVariables;
+import conts.AppMenu.ActionBarPageVariables;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import sun.security.ssl.SSLLogger;
 
 
 public class ActionBarPage extends BasePageClass implements ActionBarPageVariables{
