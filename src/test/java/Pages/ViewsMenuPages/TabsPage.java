@@ -20,11 +20,14 @@ public class TabsPage extends BasePageClass implements TabsPageVariables {
     @AndroidFindBy(xpath = SCROLLABLE_BTN)
     static MobileElement scrollable_Btn;
 
-    @AndroidFindBy(id = TAB_30)
+    @AndroidFindBy(xpath = TAB_30)
     static MobileElement tab_30;
 
     @AndroidFindBy(xpath = TAB_30_SCREEN)
     static MobileElement tab_30_Screen;
+
+    @AndroidFindBy(id = TABS)
+    static MobileElement tabs;
 
 
     public TabsPage(AndroidDriver driver) {
@@ -52,7 +55,7 @@ public class TabsPage extends BasePageClass implements TabsPageVariables {
     }
 
     public static void swipeTabsAndCheck() throws InterruptedException {
-        androidHelperMethods.swipeBetweenTabs(tab_30_Screen);
+        androidHelperMethods.swipeBetweenTabs(tabs,tab_30, 0.8, 0.2, 0.5, 2000);
         androidHelperMethods.click(tab_30);
         String tabScreenText=androidHelperMethods.GetText(tab_30_Screen);
         Assert.assertEquals(tabScreenText,"Content for tab with tag Tab 30");

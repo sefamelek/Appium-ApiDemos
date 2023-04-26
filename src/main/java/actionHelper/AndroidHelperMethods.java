@@ -214,31 +214,31 @@ public class AndroidHelperMethods {
             }
         }
     }
-    public void swipeBetweenTabs(MobileElement element) {
+    public void swipeBetweenTabs(MobileElement element,MobileElement lastElement, double startPercentage, double endPercentage, double anchorPercentage, int duration) throws InterruptedException {
+        int anchor = element.getLocation().getY() + (element.getSize().getHeight() / 2);
+        int startPoint = (int) (element.getSize().getWidth() * startPercentage) + element.getLocation().getX();
+        int endPoint = (int) (element.getSize().getWidth() * endPercentage) + element.getLocation().getX();
 
-        Dimension dimensions = driver.manage().window().getSize();
-        int scrollStart = (int) (dimensions.getWidth() * 0.8);
-        int scrollEnd = (int) (dimensions.getWidth() * 0.2);
         boolean elementVisible;
         try {
-            elementVisible = element.isDisplayed();
+            elementVisible = lastElement.isDisplayed();
 
         } catch (Exception e) {
             elementVisible = false;
         }
         while (!elementVisible) {
-            new TouchAction(driver).press(PointOption.point(0, element.getLocation().getX()))
-                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000)))
-                    .moveTo(PointOption.point(0, scrollEnd))
-                    .release()
-                    .perform();
+
+            new TouchAction(driver)
+                    .press(PointOption.point(startPoint, anchor))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(duration)))
+                    .moveTo(PointOption.point(endPoint, anchor))
+                    .release().perform();
             try {
-                elementVisible = element.isDisplayed();
+                elementVisible = lastElement.isDisplayed();
 
             } catch (Exception e) {
                 elementVisible = false;
             }
         }
-
     }
 }
