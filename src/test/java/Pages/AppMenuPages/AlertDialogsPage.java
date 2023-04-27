@@ -1,6 +1,7 @@
 package Pages.AppMenuPages;
 
 
+import actionHelper.AndroidHelperMethods;
 import conts.AppMenu.AlertDialogPageVariables;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -36,22 +37,31 @@ public class AlertDialogsPage extends BasePageClass implements AlertDialogPageVa
     public static void appMenu() throws InterruptedException {
         androidHelperMethods.LaunchApp();
         androidHelperMethods.click(app_Menu);
+        AndroidHelperMethods.logger.info("App Button Clicked");
     }
 
     public static void listDialog() throws InterruptedException {
         androidHelperMethods.click(list_Dialog);
+        AndroidHelperMethods.logger.info("List Dialog Button Clicked");
+
     }
 
     public static void alertDialog() throws InterruptedException {
         androidHelperMethods.click(alert_Dialog);
+        AndroidHelperMethods.logger.info("Alert Dialog Clicked");
+
     }
     public static void SelectCommandElementAndCheckAlert() throws InterruptedException {
         int numberOfElements = androidHelperMethods.CheckListSizeforXpath(COMMAND_ELEMENTS,command_Element);
         Random rand = new Random();
         int randomNumber = rand.nextInt(numberOfElements) + 1;
         System.out.println("Selected Command " + randomNumber);
+        AndroidHelperMethods.logger.info("Selected Command " + randomNumber);
+
         String COMMAND_ELEMENT_XPATH= COMMAND_ELEMENTS + "[" +randomNumber + "]";
         androidHelperMethods.clickbyXpath(COMMAND_ELEMENT_XPATH);
+        AndroidHelperMethods.logger.info("Command " + randomNumber + " Clicked");
+
         String alertText=androidHelperMethods.GetText(alert_Text);
         if (randomNumber==1){
             Assert.assertEquals(alertText,"You selected: 0 , Command one");
@@ -65,6 +75,7 @@ public class AlertDialogsPage extends BasePageClass implements AlertDialogPageVa
         else if (randomNumber==4){
             Assert.assertEquals(alertText,"You selected: 3 , Command four");
         }
+        AndroidHelperMethods.logger.info("Command " + randomNumber + " checked");
 
     }
 

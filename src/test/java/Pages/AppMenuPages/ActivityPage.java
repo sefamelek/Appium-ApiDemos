@@ -43,7 +43,6 @@ public class ActivityPage extends BasePageClass implements ActivityPageVariables
     }
     public static void CacheClear() throws InterruptedException {
         androidHelperMethods.CasheClear();
-        AndroidHelperMethods.logger.info("cache cleared");
     }
 
     public static void appMenu() throws InterruptedException {

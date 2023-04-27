@@ -56,7 +56,7 @@ public class AllTestCases extends BaseTest {
     @Test
     public void Scenario_06() throws Exception{
         NotificationMenuPage.appMenu();
-        NotificationMenuPage.fragmentMenu();
+        NotificationMenuPage.notificationMenu();
         NotificationMenuPage.incomingMessage();
         NotificationMenuPage.showNotificationBtn();
         NotificationMenuPage.checkNotifications();
@@ -71,6 +71,8 @@ public class AllTestCases extends BaseTest {
         TabsPage.scrollableBtn();
         TabsPage.swipeTabsAndCheck();
     }
+
+
 
 
 }

@@ -1,7 +1,6 @@
 package Listeners;
 
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import org.openqa.selenium.OutputType;
@@ -9,18 +8,20 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import com.aventstack.extentreports.Status;
+
 
 import reportManager.ExtentManager;
 
-import java.io.IOException;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Arrays;
+import java.util.Locale;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 import static DriverManager.DriverManager.driver;
 
 public class TestListener implements ITestListener {
-
+    Logger logger;
     private ConcurrentHashMap<String, ExtentTest> allTests = new ConcurrentHashMap<>();
     String reportFolderPath = System.getProperty("user.dir") + "/AutomationReports/";
     String reportName = "AutomationReport.html";
@@ -36,6 +37,7 @@ public class TestListener implements ITestListener {
         ExtentTest extentTest = ExtentManager.createInstance(reportFolderPath, reportName).createTest(iTestResult.getMethod().getMethodName());
         allTests.put(iTestResult.getClass().getSimpleName(), extentTest);
         ExtentManager.setTest(extentTest);
+        extentTest.log(Status.INFO, MarkupHelper.createLabel("Test started: " + iTestResult.getMethod().getMethodName(), ExtentColor.BLUE));
         TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
         String base64Screenshot = screenshotDriver.getScreenshotAs(OutputType.BASE64);
         ExtentManager.getTest().get().addScreenCaptureFromBase64String(base64Screenshot,"Sefa2");

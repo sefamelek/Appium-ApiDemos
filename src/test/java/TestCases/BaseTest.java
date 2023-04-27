@@ -32,7 +32,6 @@ public class BaseTest {
     public void setUp() {
         try {
 //           htmlReporter = new ExtentHtmlReporter("extent.html");
-
             paintBanner();
             driver = DriverManager.getDriver(DriverManagerType.ANDROID);
             actionBarPage = new ActionBarPage((AndroidDriver)driver);

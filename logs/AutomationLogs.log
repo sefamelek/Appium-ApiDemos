@@ -1,0 +1,51 @@
+2023-04-27 18:03:33 INFO  Api Demos Mobil Automation:49 - App Button Clicked
+2023-04-27 18:03:33 INFO  Api Demos Mobil Automation:54 - Action Bar Button Clicked
+2023-04-27 18:03:36 INFO  Api Demos Mobil Automation:60 - Action Bar Tabs Button Clicked
+2023-04-27 18:03:36 INFO  Api Demos Mobil Automation:58 - Element is active
+2023-04-27 18:03:36 INFO  Api Demos Mobil Automation:60 - Element is getting passive
+2023-04-27 18:03:36 INFO  Api Demos Mobil Automation:66 - Toggle Tab Mode Button Clicked
+2023-04-27 18:03:37 INFO  Api Demos Mobil Automation:74 - Add new tab 0
+2023-04-27 18:03:38 INFO  Api Demos Mobil Automation:74 - Add new tab 1
+2023-04-27 18:03:39 INFO  Api Demos Mobil Automation:74 - Add new tab 2
+2023-04-27 18:03:39 INFO  Api Demos Mobil Automation:86 - Tab Numbers Checked
+2023-04-27 18:03:39 INFO  Api Demos Mobil Automation:95 - Last Tab Removed
+2023-04-27 18:03:40 INFO  Api Demos Mobil Automation:114 - All tabs removed
+2023-04-27 18:03:48 INFO  Api Demos Mobil Automation:50 - App Button Clicked
+2023-04-27 18:03:49 INFO  Api Demos Mobil Automation:56 - Activity Button Clicked
+2023-04-27 18:03:51 INFO  Api Demos Mobil Automation:62 - Custom Title Button Clicked
+2023-04-27 18:03:51 INFO  Api Demos Mobil Automation:71 - Navigation Bar Checked
+2023-04-27 18:03:53 INFO  Api Demos Mobil Automation:84 - Element is getting entered Left New Left
+2023-04-27 18:03:56 INFO  Api Demos Mobil Automation:84 - Element is getting entered Right New Right
+2023-04-27 18:03:57 INFO  Api Demos Mobil Automation:82 - Navigation Bar Updated
+2023-04-27 18:03:57 INFO  Api Demos Mobil Automation:89 - New Navigation Bar Checked
+2023-04-27 18:04:02 INFO  Api Demos Mobil Automation:40 - App Button Clicked
+2023-04-27 18:04:04 INFO  Api Demos Mobil Automation:51 - Alert Dialog Clicked
+2023-04-27 18:04:04 INFO  Api Demos Mobil Automation:45 - List Dialog Button Clicked
+2023-04-27 18:04:05 INFO  Api Demos Mobil Automation:59 - Selected Command 4
+2023-04-27 18:04:06 INFO  Api Demos Mobil Automation:126 - Element is getting clicked
+2023-04-27 18:04:06 INFO  Api Demos Mobil Automation:63 - Command 4 Clicked
+2023-04-27 18:04:06 INFO  Api Demos Mobil Automation:78 - Command 4 checked
+2023-04-27 18:04:11 INFO  Api Demos Mobil Automation:40 - App Button Clicked
+2023-04-27 18:04:12 INFO  Api Demos Mobil Automation:45 - Fragment Button Clicked
+2023-04-27 18:04:13 INFO  Api Demos Mobil Automation:51 - Context Menu Button Clicked
+2023-04-27 18:04:18 INFO  Api Demos Mobil Automation:57 - Long Touch Button Clicked
+2023-04-27 18:04:18 INFO  Api Demos Mobil Automation:65 - Menu A and Menu B Checked
+2023-04-27 18:04:23 INFO  Api Demos Mobil Automation:45 - App Button Clicked
+2023-04-27 18:04:24 INFO  Api Demos Mobil Automation:50 - Fragment Button Clicked
+2023-04-27 18:04:25 INFO  Api Demos Mobil Automation:56 - Hide And Show Button Clicked
+2023-04-27 18:04:26 INFO  Api Demos Mobil Automation:67 - Texbox 1 visible
+2023-04-27 18:04:26 INFO  Api Demos Mobil Automation:70 - Texbox 2 visible
+2023-04-27 18:04:26 INFO  Api Demos Mobil Automation:79 - Hide Button 1 visible
+2023-04-27 18:04:26 INFO  Api Demos Mobil Automation:81 - Hide Button 2 visible
+2023-04-27 18:04:26 INFO  Api Demos Mobil Automation:88 - Hide Button 2 clicked
+2023-04-27 18:04:27 INFO  Api Demos Mobil Automation:92 - Texbox 2 invisible
+2023-04-27 18:04:27 INFO  Api Demos Mobil Automation:98 - Texbox 1 visible
+2023-04-27 18:04:27 INFO  Api Demos Mobil Automation:105 - Hide Button 1 visible
+2023-04-27 18:04:27 INFO  Api Demos Mobil Automation:108 - Hide Button 2 invisible and Show Button visible
+2023-04-27 18:04:31 INFO  Api Demos Mobil Automation:54 - App Button Clicked
+2023-04-27 18:04:33 INFO  Api Demos Mobil Automation:59 - Notification Button Clicked
+2023-04-27 18:04:34 INFO  Api Demos Mobil Automation:65 - Incoming Message Button Clicked
+2023-04-27 18:04:34 INFO  Api Demos Mobil Automation:70 - Show Notification Button Clicked
+2023-04-27 18:04:36 INFO  Api Demos Mobil Automation:84 - Notifications Checked
+2023-04-27 18:04:37 INFO  Api Demos Mobil Automation:93 - Notification Detail Checked
+2023-04-27 18:04:38 INFO  Api Demos Mobil Automation:99 - Notification is deleted

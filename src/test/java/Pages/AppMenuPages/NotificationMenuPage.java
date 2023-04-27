@@ -1,6 +1,7 @@
 package Pages.AppMenuPages;
 
 
+import actionHelper.AndroidHelperMethods;
 import conts.AppMenu.NotificationPageVariables;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -50,16 +51,24 @@ public class NotificationMenuPage extends BasePageClass implements NotificationP
 
         androidHelperMethods.LaunchApp();
         androidHelperMethods.click(app_Menu);
+        AndroidHelperMethods.logger.info("App Button Clicked");
+
     }
-    public static void fragmentMenu() throws InterruptedException {
+    public static void notificationMenu() throws InterruptedException {
         androidHelperMethods.click(notification_Menu);
+        AndroidHelperMethods.logger.info("Notification Button Clicked");
+
     }
 
     public static void incomingMessage() throws InterruptedException {
         androidHelperMethods.click(incoming_Message);
+        AndroidHelperMethods.logger.info("Incoming Message Button Clicked");
+
     }
     public static void showNotificationBtn() throws InterruptedException {
         androidHelperMethods.click(show_Notification_Btn);
+        AndroidHelperMethods.logger.info("Show Notification Button Clicked");
+
     }
 
 
@@ -69,10 +78,10 @@ public class NotificationMenuPage extends BasePageClass implements NotificationP
     String NotificationTitle= androidHelperMethods.GetText(app_Notification_Title);
     String NotificationText= androidHelperMethods.GetText(app_Notification_Text);
 
-
     Assert.assertEquals(AppName,"API Demos");
     Assert.assertEquals(NotificationTitle,"Joe");
     Assert.assertEquals(NotificationText,"kthx. meet u for dinner. cul8r");
+    AndroidHelperMethods.logger.info("Notifications Checked");
 
     }
 
@@ -81,10 +90,14 @@ public class NotificationMenuPage extends BasePageClass implements NotificationP
         String NotificationScreenTitle= androidHelperMethods.GetText(app_Notification_Screen);
         String NotificationScreenMessage= androidHelperMethods.GetText(app_Notification_Screen_Message);
         Assert.assertTrue(NotificationScreenMessage.contains("kthx. meet u for dinner. cul8r"));
+        AndroidHelperMethods.logger.info("Notification Detail Checked");
+
         androidHelperMethods.OpenNotifications();
         boolean checkNotifDeleted = androidHelperMethods.checkNotVisible(app_Notification_App_Name_Text);
         if (checkNotifDeleted == false){
             System.out.println("Notification is deleted");
+            AndroidHelperMethods.logger.info("Notification is deleted");
+
         }
         androidHelperMethods.CloseNotifications(close_App_Notif);
 
