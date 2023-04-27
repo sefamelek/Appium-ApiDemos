@@ -7,9 +7,11 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.apache.log4j.Logger;
 
 
 public class ActionBarPage extends BasePageClass implements ActionBarPageVariables{
+    public static Logger logger;
 
     @AndroidFindBy(xpath = APP_MENU)
     static MobileElement app_menu_Btn;
@@ -45,27 +47,32 @@ public class ActionBarPage extends BasePageClass implements ActionBarPageVariabl
 
     public static void appMenu_Btn() throws InterruptedException {
         androidHelperMethods.click(app_menu_Btn);
-        ExtentTest extentTest;
-                //.log(Status.INFO, "Senaryo adı belirlendi ve senaryo açıklaması eklendi.");
-
+        logger.info("App Button Clicked");
     }
 
     public static void actionBarBtn() throws InterruptedException {
         androidHelperMethods.click(action_bar_Btn);
+        logger.info("Action Bar Button Clicked");
+
     }
 
     public static void actionBarTabs_Btn() throws InterruptedException {
         androidHelperMethods.click(action_bar_tabs_Btn);
+        logger.info("Action Bar Tabs Button Clicked");
+
     }
 
     public static void checkToggleTabMode() throws InterruptedException {
         androidHelperMethods.checkElementAndClick(toggle_check, toggle_button);
+        logger.info("Toggle Tab Mode Button Clicked");
+
     }
 
     public static void AddNewTab() throws InterruptedException {
         // Add 3 new tabs
         for (int i = 0; i < 3; i++) {
             androidHelperMethods.click(add_new_tab);
+            logger.info("Add new tab " + i );
 
         }
     }
@@ -77,6 +84,8 @@ public class ActionBarPage extends BasePageClass implements ActionBarPageVariabl
         if (androidHelperMethods.CheckListSizeforClassName(TAB_SIZE) != 3) {
             throw new AssertionError("Expected 3 tabs, but found " + tabSize);
         }
+        logger.info("Tab Numbers Checked");
+
     }
 
 
@@ -84,6 +93,8 @@ public class ActionBarPage extends BasePageClass implements ActionBarPageVariabl
 
         // Delete the last added tab
         androidHelperMethods.click(remove_last_tab);
+        logger.info("Last Tab Removed");
+
     }
 
     public static void CheckDeletedTab() throws InterruptedException {
@@ -101,6 +112,8 @@ public class ActionBarPage extends BasePageClass implements ActionBarPageVariabl
     public static void RemoveAllTab() throws InterruptedException {
         // Delete all tabs
         androidHelperMethods.click(remove_all_tabs);
+        logger.info("All tabs removed" );
+
     }
 
     // Verify that there are no active tabs in the activity

@@ -41,7 +41,6 @@ public class AndroidHelperMethods {
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
-        logger.info("Element is getting clicked");
     }
 
     public void sendKeys(MobileElement element, String key) throws InterruptedException {
@@ -51,7 +50,6 @@ public class AndroidHelperMethods {
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.sendKeys(key);
-        logger.info("Send Key");
     }
 
     public void checkElementAndClick(MobileElement elementCheck, MobileElement elementClick) throws InterruptedException {
