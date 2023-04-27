@@ -81,7 +81,7 @@ public class AndroidHelperMethods {
         element.clear();
         element.sendKeys(input);
 
-        logger.info("Element is getting entered" + input);
+        logger.info("Element is getting entered " + input);
     }
 
     public void inputValuesSlowly(MobileElement element, String value) {

@@ -1,6 +1,7 @@
 package Pages.AppMenuPages;
 
 
+import actionHelper.AndroidHelperMethods;
 import conts.AppMenu.ActivityPageVariables;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -42,18 +43,25 @@ public class ActivityPage extends BasePageClass implements ActivityPageVariables
     }
     public static void CacheClear() throws InterruptedException {
         androidHelperMethods.CasheClear();
+        AndroidHelperMethods.logger.info("cache cleared");
     }
 
     public static void appMenu() throws InterruptedException {
         androidHelperMethods.click(app_Menu);
+        AndroidHelperMethods.logger.info("App Button Clicked");
+
     }
 
     public static void activity() throws InterruptedException {
         androidHelperMethods.click(activity_Bar);
+        AndroidHelperMethods.logger.info("Activity Button Clicked");
+
     }
 
     public static void customTitle_Btn() throws InterruptedException {
         androidHelperMethods.click(custom_Title);
+        AndroidHelperMethods.logger.info("Custom Title Button Clicked");
+
     }
     public static void checkNavigationBarText() throws InterruptedException {
         String leftBar=androidHelperMethods.GetText(left_Navigation_Bar);
@@ -61,6 +69,7 @@ public class ActivityPage extends BasePageClass implements ActivityPageVariables
 
         Assert.assertEquals(leftBar,"Left is best");
         Assert.assertEquals(rightBar,"Right is always right");
+        AndroidHelperMethods.logger.info("Navigation Bar Checked");
 
     }
 
@@ -71,12 +80,14 @@ public class ActivityPage extends BasePageClass implements ActivityPageVariables
         androidHelperMethods.click(right_Textbox);
         androidHelperMethods.enter(right_Textbox,"Right New Right");
         androidHelperMethods.click(Change_Right_Button);
+        AndroidHelperMethods.logger.info("Navigation Bar Updated");
 
         String leftBar=androidHelperMethods.GetText(left_Navigation_Bar);
         String rightBar= androidHelperMethods.GetText(right_Navigation_Bar);
 
         Assert.assertEquals(leftBar,"Left New Left");
         Assert.assertEquals(rightBar,"Right New Right");
+        AndroidHelperMethods.logger.info("New Navigation Bar Checked");
 
     }
 

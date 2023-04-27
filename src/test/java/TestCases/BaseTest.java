@@ -5,6 +5,7 @@ import DriverManager.DriverManager;
 import DriverManager.DriverManagerType;
 import Pages.AppMenuPages.*;
 import Pages.ViewsMenuPages.*;
+import actionHelper.AndroidHelperMethods;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -41,7 +42,7 @@ public class BaseTest {
             fragmentHideAndShowMenuPage = new FragmentHideAndShowMenuPage((AndroidDriver) driver);
             notificationMenuPage = new NotificationMenuPage((AndroidDriver) driver);;
             tabsPage = new TabsPage((AndroidDriver) driver);
-
+            AndroidHelperMethods.logger.info("---- APP INSTALLED AND OPENED ---");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
