@@ -99,7 +99,8 @@ public class NotificationMenuPage extends BasePageClass implements NotificationP
             AndroidHelperMethods.logger.info("Notification is deleted");
 
         }
-        androidHelperMethods.CloseNotifications(close_App_Notif);
+        //androidHelperMethods.CloseNotifications(close_App_Notif);
+        androidHelperMethods.closeNotifications();
 
     }
 }

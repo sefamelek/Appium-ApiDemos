@@ -238,5 +238,11 @@ public class AndroidHelperMethods {
                 elementVisible = false;
             }
         }
+
+
+    }
+
+    public void closeNotifications() throws InterruptedException {
+        driver.navigate().back();
     }
 }

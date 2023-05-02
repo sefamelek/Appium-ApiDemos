@@ -29,6 +29,8 @@ public class AndroidDriverManager {
             String appActivity = properties.getProperty("appActivity");
             String platformName = properties.getProperty("platformName");
             capabilities = new DesiredCapabilities();
+            capabilities.setCapability("autoGrantPermissions", true);
+            capabilities.setCapability("autoAcceptAlerts", true);
             capabilities.setCapability("app", app.getAbsolutePath());
             capabilities.setCapability("appPackage", appPackage);
             capabilities.setCapability("appActivity", appActivity);
