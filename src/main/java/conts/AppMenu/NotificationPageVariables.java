@@ -10,7 +10,6 @@ public interface NotificationPageVariables {
     public static final String APP_NOTIFICATION_TEXT="//android.widget.TextView[contains(@text, 'kthx. meet u for dinner. cul8r')]";//xpath
     public static final String APP_NOTIFICATION_SCREEN="//android.widget.TextView[contains(@text, 'App/Notification/IncomingMessageView')]";//xpath
     public static final String APP_NOTIFICATION_SCREEN_MESSAGE="//android.widget.TextView[contains(@text, 'kthx. meet u for dinner. cul8r')]";//xpath
-    public static final String CLOSE_NOTIFICATIONS="com.android.systemui:id/dismiss_view";//id
 
 }
 

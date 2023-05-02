@@ -39,8 +39,6 @@ public class NotificationMenuPage extends BasePageClass implements NotificationP
     @AndroidFindBy(xpath = APP_NOTIFICATION_SCREEN_MESSAGE)
     static MobileElement app_Notification_Screen_Message;
 
-    @AndroidFindBy(id = CLOSE_NOTIFICATIONS)
-    static MobileElement close_App_Notif;
 
 
     public NotificationMenuPage(AndroidDriver driver) {
@@ -99,7 +97,6 @@ public class NotificationMenuPage extends BasePageClass implements NotificationP
             AndroidHelperMethods.logger.info("Notification is deleted");
 
         }
-        //androidHelperMethods.CloseNotifications(close_App_Notif);
         androidHelperMethods.closeNotifications();
 
     }
