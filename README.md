@@ -43,7 +43,7 @@ TestListner :In order to listen to test events such as passed, failed, skipped, 
 
 **onTestSkipped:** This method is invoked when each test method is skipped. This can be used to indicate that the particular test method has been skipped.
 
-**onTestSuccess:** This method is invoked when any test method succeeds. This can be used to indicate that the particular test method has successfully finished its execution.
+**onTestSuccess:** This method is invoked when any test method succeeds. This can be used to indicate that the particular test method has successfully finished its execution. 
 
 **onTestFailure:** This method is invoked when any test method fails. This can be used to indicate that the particular test method has failed. You can create an event for taking a screenshot which will show where the test has been failed.
 ```
